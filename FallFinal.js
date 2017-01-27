@@ -8,307 +8,161 @@
 var mode = "Rad";
 var currentInput = "0";
 var memory = "0";
-var operator = 0; << << << < HEAD
-/**
- * [ Helper function for displaying the current input]
- * @returns {string} [Doesn't let calculator go past 11 characters]
- */
+var operator = 0;
+// Helper function for displaying the current input
 function inputlimit() {
-    if (inputlength > 11) { === === =
-        // Helper function for displaying the current input
-        function inputlimit() {
-            if (inputlength > 11) { >>> >>> > Fall_Final / master
-                return "Error"
-            }
-            else {
-                displayCurrentInput();
-            }
-        } << << << < HEAD
+    if (inputlength > 11) {
+        return "Error"
     }
-    /**
-     * [Dispalys current input]
-     */
-    function displayCurrentInput() {
-        document.getElementById('screen').value = currentInput;
+    else {
+        displayCurrentInput();
     }
-    /**
-     * [Adds a digit to the current input]
-     * @param {[[Type]]} dig [Digit]
-     */
-    function addDigit(dig) {
-        if (currentInput.length < 10) {
-            if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
-                currentInput = dig; === === = function displayCurrentInput() {
-                    document.getElementById('screen').value = currentInput;
-                }
-                // Adds a digit to the current input
-                function addDigit(dig) {
-                    if (currentInput.length < 10) {
-                        if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
-                            currentInput = dig;
-                        }
-                        else {
-                            currentInput = currentInput + dig;
-                        } >>> >>> > Fall_Final / master
-                    }
-                    displayCurrentInput(); << << << < HEAD
-                }
-                /**
-                 * [Adds a decimal to the current input]
-                 */
-                function addDecimal() {
-                    if (currentInput.length == 0) {
-                        //no leading ".", use "0."
-                        currentInput = "0.";
-                    }
-                    else {
-                        // First make sure one doesn't exist
-                        if (currentInput.indexOf(".") == -1) {
-                            currentInput = currentInput + ".";
-                        } === === = >>> >>> > Fall_Final / master
-                    }
-                    // Adds a decimal to the current input
-                    function addDecimal() {
-                        if (currentInput.length == 0) {
-                            //no leading ".", use "0."
-                            currentInput = "0.";
-                        }
-                        else {
-                            // First make sure one doesn't exist
-                            if (currentInput.indexOf(".") == -1) {
-                                currentInput = currentInput + ".";
-                            }
-                        }
-                        displayCurrentInput(); << << << < HEAD
-                    }
-                    /**
-                     * [Clears everything.]
-                     */
-                    function allClear() { === === =
-                    }
-                    // Clears everything.
-                    function allClear() { >>> >>> > Fall_Final / master
-                        currentInput = "0";
-                        operator = 0; //clear operator
-                        memory = "0"; //clear memory
-                        displayCurrentInput(); << << << < HEAD
-                    }
-                    /**
-                     * [Stores the last operator pushed for multiply, divide, add, or subtract.]
-                     * @param {[[Type]]} op [Operator]
-                     */
-                    function storeOperator(op) {
-                        if (op.indexOf("*") > -1) {
-                            operator = 1;
-                        }; //codes for
-                        if (op.indexOf("/") > -1) {
-                            operator = 2;
-                        }; // slash (divide)
-                        if (op.indexOf("+") > -1) {
-                            operator = 3;
-                        }; // sum
-                        if (op.indexOf("-") > -1) {
-                            operator = 4;
-                        }; // difference
-                        if (op.indexOf("^") > -1) {
-                            operator = 5;
-                        }; // exponents
-                        memory = currentInput; //store value
-                        currentInput = "0";
-                        displayCurrentInput();
-                    }
-                    /**
-                     * [Calculate using operator, the memory and what is current]
-                     */
-                    function calculate() {
-                        if (operator == 1) {
-                            currentInput = eval(memory) * eval(currentInput);
-                        };
-                        // If they devided by 0 then get ERROR
-                        if (operator == 2) {
-                            currentInput = eval(memory) / eval(currentInput);
-                            var initialvalue = currentInput.toString();
-                            if (initialvalue == "Infinity") {
-                                currentInput = "ERROR"
-                            };
-                        };
-                        if (operator == 3) {
-                            currentInput = eval(memory) + eval(currentInput);
-                        };
-                        if (operator == 4) {
-                            currentInput = eval(memory) - eval(currentInput);
-                        };
-                        if (operator == 5) {
-                            currentInput = Math.pow(eval(memory), eval(currentInput));
-                        };
-                        operator = 0; //clear operator
-                        memory = "0"; //clear memory
-                        displayCurrentInput();
-                    }
-                    /**
-                     * [ Change the sign of the current input]
-                     */
-                    function changeSign() {
-                        currentInput = currentInput * -1
-                        displayCurrentInput();
-                    }
-                    /**
-                     * [Clear the current input back to 0]
-                     */
-                    function clearcurrent() {
-                        currentInput = "0";
-                        displayCurrentInput();
-                    }
-                    /**
-                     * [Change the current input to a percentage]
-                     */
-                    function percentage() {
-                        currentInput = currentInput / 100
-                        displayCurrentInput();
-                    }
-                    /**
-                     * [Calculate the factorial of the current input]
-                     * @param {[[Type]]} num [[Description]]
-                     */
-                    function factorial(num) {
-                        for (var i = currentInput - 1; i >= 1; i--) {
-                            currentInput *= i; === === =
-                        }
-                        //
-                        /**
-                         * [Stores the last operator pushed for multiply, divide, add, or subtract.]
-                         * @param {[[Type]]} op [Operator]
-                         */
-                        function storeOperator(op) {
-                            if (op.indexOf("*") > -1) {
-                                operator = 1;
-                            }; //codes for
-                            if (op.indexOf("/") > -1) {
-                                operator = 2;
-                            }; // slash (divide)
-                            if (op.indexOf("+") > -1) {
-                                operator = 3;
-                            }; // sum
-                            if (op.indexOf("-") > -1) {
-                                operator = 4;
-                            }; // difference
-                            if (op.indexOf("^") > -1) {
-                                operator = 5;
-                            }; // exponents
-                            memory = currentInput; //store value
-                            currentInput = "0";
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Calculate using operator, the memory and what is current]
-                         */
-                        function calculate() {
-                            if (operator == 1) {
-                                currentInput = eval(memory) * eval(currentInput);
-                            };
-                            // If current input divides by 0 make an ERROR as the output
-                            if (operator == 2) {
-                                currentInput = eval(memory) / eval(currentInput);
-                                var initialvalue = currentInput.toString();
-                                if (initialvalue == "Infinity") {
-                                    currentInput = "ERROR"
-                                };
-                            };
-                            if (operator == 3) {
-                                currentInput = eval(memory) + eval(currentInput);
-                            };
-                            if (operator == 4) {
-                                currentInput = eval(memory) - eval(currentInput);
-                            };
-                            if (operator == 5) {
-                                currentInput = Math.pow(eval(memory), eval(currentInput));
-                            };
-                            operator = 0; //clear operator
-                            memory = "0"; //clear memory
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Change the sign of the current input]
-                         */
-                        function changeSign() {
-                            currentInput = currentInput * -1
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Clear the current input back to 0]
-                         */
-                        function clearcurrent() {
-                            currentInput = "0";
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Change the current input to a percentage]
-                         */
-                        function percentage() {
-                            currentInput = currentInput / 100
-                            displayCurrentInput(); >>> >>> > Fall_Final / master
-                        }
-                        /**
-                         * [Calculate the factorial of the current input]
-                         * @param {[[Type]]} num [[Description]]
-                         */
-                        function factorial(num) {
-                            for (var i = currentInput - 1; i >= 1; i--) {
-                                currentInput *= i;
-                            }
-                            displayCurrentInput(); << << << < HEAD
-                        }
-                        /**
-                         * [Calculate the square of the current input]
-                         */
-                        function square() {
-                            currentInput = currentInput * currentInput
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Calculate the square root of the current input]
-                         */
-                        function squareRoot() {
-                            currentInput = Math.sqrt(currentInput);
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Calculate the inverse of the current input]
-                         */
-                        function inverse() {
-                            currentInput = 1 / currentInput
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Calculate sin, cos, and tan of the current input]
-                         * @param {[[Type]]} sign [To repersent which trigonometry sign is being used]
-                         */
-                        function trig(sign) {
-                            if (mode == "Deg") {
-                                currentInput = (Math.PI / 180) * currentInput;
-                            }
-                            if (sign == "sin") {
-                                currentInput = Math.sin(currentInput);
-                            }
-                            else if (sign == "cos") {
-                                currentInput = Math.cos(currentInput);
-                            }
-                            else if (sign == "tan") {
-                                currentInput = Math.tan(currentInput);
-                            }
-                            displayCurrentInput();
-                        }
-                        /**
-                         * [Creates a toggle switch to go from radians to degree]
-                         * @param {[[Type]]} button [Shows the state of the button]
-                         */
-                        function toggle(button) {
-                            if (document.getElementById("1").value == "Rad") {
-                                document.getElementById("1").value = "Deg";
-                                mode = "Deg"
-                            }
-                            else if (document.getElementById("1").value == "Deg") {
-                                document.getElementById("1").value = "Rad";
-                                mode = "Rad"
-                            }
-                        }
+}
+
+function displayCurrentInput() {
+    document.getElementById('screen').value = currentInput;
+}
+// Adds a digit to the current input
+function addDigit(dig) {
+    if (currentInput.length < 10) {
+        if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
+            currentInput = dig;
+        }
+        else {
+            currentInput = currentInput + dig;
+        }
+    }
+    displayCurrentInput();
+}
+// Adds a decimal to the current input
+function addDecimal() {
+    if (currentInput.length == 0) {
+        //no leading ".", use "0."
+        currentInput = "0.";
+    }
+    else {
+        // First make sure one doesn't exist
+        if (currentInput.indexOf(".") == -1) {
+            currentInput = currentInput + ".";
+        }
+    }
+    displayCurrentInput();
+}
+// Clears everything.
+function allClear() {
+    currentInput = "0";
+    operator = 0; //clear operator
+    memory = "0"; //clear memory
+    displayCurrentInput();
+}
+// Stores the last operator pushed for multiply, divide, add, or subtract.
+function storeOperator(op) {
+    if (op.indexOf("*") > -1) {
+        operator = 1;
+    }; //codes for
+    if (op.indexOf("/") > -1) {
+        operator = 2;
+    }; // slash (divide)
+    if (op.indexOf("+") > -1) {
+        operator = 3;
+    }; // sum
+    if (op.indexOf("-") > -1) {
+        operator = 4;
+    }; // difference
+    if (op.indexOf("^") > -1) {
+        operator = 5;
+    }; // exponents
+    memory = currentInput; //store value
+    currentInput = "0";
+    displayCurrentInput();
+}
+// Calculate using operator, the memory and what is current
+function calculate() {
+    if (operator == 1) {
+        currentInput = eval(memory) * eval(currentInput);
+    };
+    if (operator == 2) {
+        currentInput = eval(memory) / eval(currentInput);
+        var initialvalue = currentInput.toString();
+        if (initialvalue == "Infinity") {
+            currentInput = "ERROR"
+        };
+    };
+    if (operator == 3) {
+        currentInput = eval(memory) + eval(currentInput);
+    };
+    if (operator == 4) {
+        currentInput = eval(memory) - eval(currentInput);
+    };
+    if (operator == 5) {
+        currentInput = Math.pow(eval(memory), eval(currentInput));
+    };
+    operator = 0; //clear operator
+    memory = "0"; //clear memory
+    displayCurrentInput();
+}
+// Change the sign of the current input
+function changeSign() {
+    currentInput = currentInput * -1
+    displayCurrentInput();
+}
+// Clear the current input back to 0
+function clearcurrent() {
+    currentInput = "0";
+    displayCurrentInput();
+}
+// Change the current input to a percentage
+function percentage() {
+    currentInput = currentInput / 100
+    displayCurrentInput();
+}
+// Calculate the factorial of the current input
+function factorial(num) {
+    for (var i = currentInput - 1; i >= 1; i--) {
+        currentInput *= i;
+    }
+    displayCurrentInput();
+}
+// Calculate the square of the current input
+function square() {
+    currentInput = currentInput * currentInput
+    displayCurrentInput();
+}
+// Calculate the square root of the current input
+function squareRoot() {
+    currentInput = Math.sqrt(currentInput);
+    displayCurrentInput();
+}
+// Calculate the inverse of the current input
+function inverse() {
+    currentInput = 1 / currentInput
+    displayCurrentInput();
+}
+
+function trig(sign) {
+    if (mode == "Deg") {
+        currentInput = (Math.PI / 180) * currentInput;
+    }
+    if (sign == "sin") {
+        currentInput = Math.sin(currentInput);
+    }
+    else if (sign == "cos") {
+        currentInput = Math.cos(currentInput);
+    }
+    else if (sign == "tan") {
+        currentInput = Math.tan(currentInput);
+    }
+    displayCurrentInput();
+}
+
+function toggle(button) {
+    if (document.getElementById("1").value == "Rad") {
+        document.getElementById("1").value = "Deg";
+        mode = "Deg"
+    }
+    else if (document.getElementById("1").value == "Deg") {
+        document.getElementById("1").value = "Rad";
+        mode = "Rad"
+    }
+}
+///
