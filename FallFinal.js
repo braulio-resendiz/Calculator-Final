@@ -9,7 +9,10 @@ var mode = "Rad";
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
-// Helper function for displaying the current input
+/**
+ * [ Helper function for displaying the current input]
+ * @returns {string} [Doesn't let calculator go past 11 characters]
+ */
 function inputlimit() {
     if (inputlength > 11) {
         return "Error"
@@ -18,11 +21,16 @@ function inputlimit() {
         displayCurrentInput();
     }
 }
-
+/**
+ * [Dispalys current input]
+ */
 function displayCurrentInput() {
     document.getElementById('screen').value = currentInput;
 }
-// Adds a digit to the current input
+/**
+ * [Adds a digit to the current input]
+ * @param {[[Type]]} dig [[Description]]
+ */
 function addDigit(dig) {
     if (currentInput.length < 10) {
         if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1)) {
@@ -34,7 +42,9 @@ function addDigit(dig) {
     }
     displayCurrentInput();
 }
-// Adds a decimal to the current input
+/**
+ * [Adds a decimal to the current input]
+ */
 function addDecimal() {
     if (currentInput.length == 0) {
         //no leading ".", use "0."
@@ -48,14 +58,19 @@ function addDecimal() {
     }
     displayCurrentInput();
 }
-// Clears everything.
+/**
+ * [Clears everything.]
+ */
 function allClear() {
     currentInput = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+/**
+ * [Stores the last operator pushed for multiply, divide, add, or subtract.]
+ * @param {[[Type]]} op [Operator]
+ */
 function storeOperator(op) {
     if (op.indexOf("*") > -1) {
         operator = 1;
@@ -76,11 +91,14 @@ function storeOperator(op) {
     currentInput = "0";
     displayCurrentInput();
 }
-// Calculate using operator, the memory and what is current
+/**
+ * [Calculate using operator, the memory and what is current]
+ */
 function calculate() {
     if (operator == 1) {
         currentInput = eval(memory) * eval(currentInput);
     };
+    // If they devided by 0 then get ERROR
     if (operator == 2) {
         currentInput = eval(memory) / eval(currentInput);
         var initialvalue = currentInput.toString();
@@ -101,44 +119,62 @@ function calculate() {
     memory = "0"; //clear memory
     displayCurrentInput();
 }
-// Change the sign of the current input
+/**
+ * [ Change the sign of the current input]
+ */
 function changeSign() {
     currentInput = currentInput * -1
     displayCurrentInput();
 }
-// Clear the current input back to 0
+/**
+ * [Clear the current input back to 0]
+ */
 function clearcurrent() {
     currentInput = "0";
     displayCurrentInput();
 }
-// Change the current input to a percentage
+/**
+ * [Change the current input to a percentage]
+ */
 function percentage() {
     currentInput = currentInput / 100
     displayCurrentInput();
 }
-// Calculate the factorial of the current input
+/**
+ * [Calculate the factorial of the current input]
+ * @param {[[Type]]} num [[Description]]
+ */
 function factorial(num) {
     for (var i = currentInput - 1; i >= 1; i--) {
         currentInput *= i;
     }
     displayCurrentInput();
 }
-// Calculate the square of the current input
+/**
+ * [Calculate the square of the current input]
+ */
 function square() {
     currentInput = currentInput * currentInput
     displayCurrentInput();
 }
-// Calculate the square root of the current input
+/**
+ * [Calculate the square root of the current input]
+ */
 function squareRoot() {
     currentInput = Math.sqrt(currentInput);
     displayCurrentInput();
 }
-// Calculate the inverse of the current input
+/**
+ * [Calculate the inverse of the current input]
+ */
 function inverse() {
     currentInput = 1 / currentInput
     displayCurrentInput();
 }
-
+/**
+ * [Calculate sin, cos, and tan of the current input]
+ * @param {[[Type]]} sign [To repersent which trigonometry sign is being used]
+ */
 function trig(sign) {
     if (mode == "Deg") {
         currentInput = (Math.PI / 180) * currentInput;
@@ -154,7 +190,10 @@ function trig(sign) {
     }
     displayCurrentInput();
 }
-
+/**
+ * [Creates a toggle switch to go from radians to degree]
+ * @param {[[Type]]} button [Shows the state of the button]
+ */
 function toggle(button) {
     if (document.getElementById("1").value == "Rad") {
         document.getElementById("1").value = "Deg";
