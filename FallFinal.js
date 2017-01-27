@@ -305,47 +305,10 @@ function inputlimit() {
                         function toggle(button) {
                             if (document.getElementById("1").value == "Rad") {
                                 document.getElementById("1").value = "Deg";
-                                mode = "Deg" === === =
+                                mode = "Deg"
                             }
-                            // Calculate the square of the current input
-                            function square() {
-                                currentInput = currentInput * currentInput
-                                displayCurrentInput();
+                            else if (document.getElementById("1").value == "Deg") {
+                                document.getElementById("1").value = "Rad";
+                                mode = "Rad"
                             }
-                            // Calculate the square root of the current input
-                            function squareRoot() {
-                                currentInput = Math.sqrt(currentInput);
-                                displayCurrentInput();
-                            }
-                            // Calculate the inverse of the current input
-                            function inverse() {
-                                currentInput = 1 / currentInput
-                                displayCurrentInput();
-                            }
-
-                            function trig(sign) {
-                                if (mode == "Deg") {
-                                    currentInput = (Math.PI / 180) * currentInput;
-                                }
-                                if (sign == "sin") {
-                                    currentInput = Math.sin(currentInput);
-                                }
-                                else if (sign == "cos") {
-                                    currentInput = Math.cos(currentInput);
-                                }
-                                else if (sign == "tan") {
-                                    currentInput = Math.tan(currentInput);
-                                }
-                                displayCurrentInput(); >>> >>> > Fall_Final / master
-                            }
-
-                            function toggle(button) {
-                                if (document.getElementById("1").value == "Rad") {
-                                    document.getElementById("1").value = "Deg";
-                                    mode = "Deg"
-                                }
-                                else if (document.getElementById("1").value == "Deg") {
-                                    document.getElementById("1").value = "Rad";
-                                    mode = "Rad"
-                                }
-                            }
+                        }
