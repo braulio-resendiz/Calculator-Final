@@ -9,7 +9,7 @@ var mode = "Rad";
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
-// Helper function for displaying the current inpot
+// Helper function for displaying the current input
 function inputlimit()
     {
     if (inputlength > 11)
