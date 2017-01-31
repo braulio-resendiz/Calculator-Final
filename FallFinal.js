@@ -9,7 +9,11 @@ var mode = "Rad";
 var currentInput = "0";
 var memory = "0";
 var operator = 0;
-// Helper function for displaying the current input
+
+/**
+ * [[Helper function for displaying the current input]]
+ * @returns {string} [[Description]]
+ */
 function inputlimit()
     {
     if (inputlength > 11)
@@ -22,11 +26,18 @@ function inputlimit()
         }
     }
 
+/**
+ * [[Display current input]]
+ */
 function displayCurrentInput()
     {
     document.getElementById('screen').value = currentInput;
     }
-// Adds a digit to the current input
+
+/**
+ * Adds a digit to the current input
+ * @param {[[Type]]} dig [[Digit]]
+ */
 function addDigit(dig)
     {
         if (currentInput.length < 10)
@@ -42,7 +53,10 @@ function addDigit(dig)
         }
     displayCurrentInput();
     }
-// Adds a decimal to the current input
+
+/**
+ * [[Adds a decimal to the current input]]
+ */
 function addDecimal()
     {
         if (currentInput.length == 0)
@@ -60,7 +74,10 @@ function addDecimal()
             }
     displayCurrentInput();
     }
-// Clears everything.
+
+/**
+ * [[Clears everything.]]
+ */
 function allClear()
     {
     currentInput = "0";
@@ -68,7 +85,11 @@ function allClear()
     memory = "0"; //clear memory
     displayCurrentInput();
     }
-// Stores the last operator pushed for multiply, divide, add, or subtract.
+//
+/**
+ * [[Stores the last operator pushed for multiply, divide, add, or subtract.]]
+ * @param {[[Functions]]} op [[Operations]]
+ */
 function storeOperator(op)
     {
         if (op.indexOf("*") > -1)
@@ -96,6 +117,9 @@ function storeOperator(op)
     displayCurrentInput();
     }
 // Calculate using operator, the memory and what is current
+/**
+ * [[Description]]
+ */
 function calculate()
     {
         if (operator == 1)
@@ -128,24 +152,37 @@ function calculate()
     displayCurrentInput();
     }
 // Change the sign of the current input
+/**
+ * [[Description]]
+ */
 function changeSign()
     {
     currentInput = currentInput * -1
     displayCurrentInput();
     }
 // Clear the current input back to 0
+/**
+ * [[Description]]
+ */
 function clearcurrent()
     {
     currentInput = "0";
     displayCurrentInput();
     }
 // Change the current input to a percentage
+/**
+ * [[Description]]
+ */
 function percentage()
     {
     currentInput = currentInput / 100
     displayCurrentInput();
     }
 // Calculate the factorial of the current input
+/**
+ * [[Description]]
+ * @param {[[Type]]} num [[Description]]
+ */
 function factorial(num)
     {
         for (var i = currentInput - 1; i >= 1; i--)
@@ -155,24 +192,37 @@ function factorial(num)
     displayCurrentInput();
     }
 // Calculate the square of the current input
+/**
+ * [[Description]]
+ */
 function square()
     {
     currentInput = currentInput * currentInput
     displayCurrentInput();
     }
 // Calculate the square root of the current input
+/**
+ * [[Description]]
+ */
 function squareRoot()
     {
     currentInput = Math.sqrt(currentInput);
     displayCurrentInput();
     }
 // Calculate the inverse of the current input
+/**
+ * [[Description]]
+ */
 function inverse()
     {
     currentInput = 1 / currentInput
     displayCurrentInput();
     }
 
+/**
+ * [[Description]]
+ * @param {[[Type]]} sign [[Description]]
+ */
 function trig(sign)
     {
         if (mode == "Deg")
@@ -194,6 +244,10 @@ function trig(sign)
     displayCurrentInput();
     }
 
+/**
+ * [[Description]]
+ * @param {[[Type]]} button [[Description]]
+ */
 function toggle(button)
     {
         if (document.getElementById("1").value == "Rad")
