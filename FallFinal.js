@@ -6,7 +6,7 @@
 8. Super Challenge: Add ( and ) buttons that work! 9. Super Duper Challenge: Add exponents (negatives too!)
 */
 var mode = "Rad";
-var currentInput = "0";
+var current_input = "0";
 var memory = "0";
 var operator = 0;
 
@@ -31,7 +31,7 @@ function inputLimit()
  */
 function displayCurrentInput()
     {
-    document.getElementById('screen').value = currentInput;
+    document.getElementById('screen').value = current_input;
     }
 
 /**
@@ -40,15 +40,15 @@ function displayCurrentInput()
  */
 function addDigit(dig)
     {
-        if (currentInput.length < 10)
+        if (current_input.length < 10)
         {
-            if ((eval(currentInput) == 0) && (currentInput.indexOf(".") == -1))
+            if ((eval(current_input) == 0) && (current_input.indexOf(".") == -1))
                 {
-                currentInput = dig;
+                current_input = dig;
                 }
             else
                 {
-                currentInput = currentInput + dig;
+                current_input = current_input + dig;
                 }
         }
     displayCurrentInput();
@@ -59,17 +59,17 @@ function addDigit(dig)
  */
 function addDecimal()
     {
-        if (currentInput.length == 0)
+        if (current_input.length == 0)
             {
             //no leading ".", use "0."
-            currentInput = "0.";
+            current_input = "0.";
             }
         else
             {
             // First make sure one doesn't exist
-            if (currentInput.indexOf(".") == -1)
+            if (current_input.indexOf(".") == -1)
                 {
-                currentInput = currentInput + ".";
+                current_input = current_input + ".";
                 }
             }
     displayCurrentInput();
@@ -80,7 +80,7 @@ function addDecimal()
  */
 function allClear()
     {
-    currentInput = "0";
+    current_input = "0";
     operator = 0; //clear operator
     memory = "0"; //clear memory
     displayCurrentInput();
@@ -112,8 +112,8 @@ function storeOperator(op)
             {
             operator = 5;
             }; // exponents
-    memory = currentInput; //store value
-    currentInput = "0";
+    memory = current_input; //store value
+    current_input = "0";
     displayCurrentInput();
     }
 // Calculate using operator, the memory and what is current
@@ -124,28 +124,28 @@ function calculate()
     {
         if (operator == 1)
             {
-            currentInput = eval(memory) * eval(currentInput);
+            current_input = eval(memory) * eval(current_input);
             };
         if (operator == 2)
             {
-            currentInput = eval(memory) / eval(currentInput);
-            var initialvalue = currentInput.toString();
-            if (initialvalue == "Infinity")
+            current_input = eval(memory) / eval(current_input);
+            var initial_value = current_input.toString();
+            if (initial_value == "Infinity")
                 {
-                currentInput = "ERROR"
+                current_input = "ERROR"
                 };
             };
         if (operator == 3)
             {
-            currentInput = eval(memory) + eval(currentInput);
+            current_input = eval(memory) + eval(current_input);
             };
         if (operator == 4)
             {
-            currentInput = eval(memory) - eval(currentInput);
+            current_input = eval(memory) - eval(current_input);
             };
         if (operator == 5)
             {
-            currentInput = Math.pow(eval(memory), eval(currentInput));
+            current_input = Math.pow(eval(memory), eval(current_input));
             };
     operator = 0; //clear operator
     memory = "0"; //clear memory
@@ -157,7 +157,7 @@ function calculate()
  */
 function changeSign()
     {
-    currentInput = currentInput * -1
+    current_input = current_input * -1
     displayCurrentInput();
     }
 // Clear the current input back to 0
@@ -166,7 +166,7 @@ function changeSign()
  */
 function clearCurrent()
     {
-    currentInput = "0";
+    current_input = "0";
     displayCurrentInput();
     }
 // Change the current input to a percentage
@@ -175,7 +175,7 @@ function clearCurrent()
  */
 function percentage()
     {
-    currentInput = currentInput / 100
+    current_input = current_input / 100
     displayCurrentInput();
     }
 // Calculate the factorial of the current input
@@ -185,9 +185,9 @@ function percentage()
  */
 function factorial(num)
     {
-        for (var i = currentInput - 1; i >= 1; i--)
+        for (var i = current_input - 1; i >= 1; i--)
             {
-            currentInput *= i;
+            current_input *= i;
             }
     displayCurrentInput();
     }
@@ -197,7 +197,7 @@ function factorial(num)
  */
 function square()
     {
-    currentInput = currentInput * currentInput
+    current_input = current_input * current_input
     displayCurrentInput();
     }
 // Calculate the square root of the current input
@@ -206,7 +206,7 @@ function square()
  */
 function squareRoot()
     {
-    currentInput = Math.sqrt(currentInput);
+    current_input = Math.sqrt(current_input);
     displayCurrentInput();
     }
 // Calculate the inverse of the current input
@@ -215,7 +215,7 @@ function squareRoot()
  */
 function inverse()
     {
-    currentInput = 1 / currentInput
+    current_input = 1 / current_input
     displayCurrentInput();
     }
 
@@ -227,19 +227,19 @@ function trig(sign)
     {
         if (mode == "Deg")
             {
-            currentInput = (Math.PI / 180) * currentInput;
+            current_input = (Math.PI / 180) * current_input;
             }
         if (sign == "sin")
             {
-            currentInput = Math.sin(currentInput);
+            current_input = Math.sin(current_input);
             }
         else if (sign == "cos")
             {
-            currentInput = Math.cos(currentInput);
+            current_input = Math.cos(current_input);
             }
         else if (sign == "tan")
             {
-            currentInput = Math.tan(currentInput);
+            current_input = Math.tan(current_input);
             }
     displayCurrentInput();
     }
