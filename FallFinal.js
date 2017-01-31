@@ -14,7 +14,7 @@ var operator = 0;
  * [[Helper function for displaying the current input]]
  * @returns {string} [[It doesn't let the user to go beyond 12 characters]]
  */
-function inputlimit()
+function inputLimit()
     {
     if (inputlength > 11)
         {
@@ -164,7 +164,7 @@ function changeSign()
 /**
  * [[Clear the current input back to 0]]
  */
-function clearcurrent()
+function clearCurrent()
     {
     currentInput = "0";
     displayCurrentInput();
