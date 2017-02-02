@@ -11,8 +11,8 @@ var memory = "0";
 var operator = 0;
 
 /**
- * [[Helper function for displaying the current input]]
- * @returns {string} [[It doesn't let the user to go beyond 12 characters]]
+ * Helper function for displaying the current input
+ * @returns {string} It doesn't let the user to go beyond 12 characters
  */
 function inputLimit()
     {
@@ -27,7 +27,7 @@ function inputLimit()
     }
 
 /**
- * [[Display current input]]
+ * Display current input
  */
 function displayCurrentInput()
     {
@@ -36,7 +36,7 @@ function displayCurrentInput()
 
 /**
  * Adds a digit to the current input
- * @param {[[Number]]} dig [[Digit]]
+ * @param {String} dig The selected digit.
  */
 function addDigit(dig)
     {
@@ -55,7 +55,7 @@ function addDigit(dig)
     }
 
 /**
- * [[Adds a decimal to the current input]]
+ * Adds a decimal to the current input
  */
 function addDecimal()
     {
@@ -76,7 +76,7 @@ function addDecimal()
     }
 
 /**
- * [[Clears everything.]]
+ * Clears everything
  */
 function allClear()
     {
@@ -87,8 +87,8 @@ function allClear()
     }
 
 /**
- * [[Stores the last operator pushed for multiply, divide, add, or subtract.]]
- * @param {[[Functions]]} op [[Operations]]
+ * Stores the last operator pushed for multiply, divide, add, or subtract.
+ * @param {Functions} op Repersents operator
  */
 function storeOperator(op)
     {
@@ -117,7 +117,7 @@ function storeOperator(op)
     displayCurrentInput();
     }
 /**
- * [[Calculate using operator, the memory and what is current]]
+ * Calculate using operator, the memory and what is current
  */
 function calculate()
     {
@@ -153,7 +153,7 @@ function calculate()
     }
 
 /**
- * [[Change the sign of the current input]]
+ * Change the sign of the current input
  */
 function changeSign()
     {
@@ -162,7 +162,7 @@ function changeSign()
     }
 
 /**
- * [[Clear the current input back to 0]]
+ * Clear the current input back to 0
  */
 function clearCurrent()
     {
@@ -171,7 +171,7 @@ function clearCurrent()
     }
 
 /**
- * [[Change the current input to a percentage]]
+ * Change the current input to a percentage
  */
 function percentage()
     {
@@ -180,8 +180,8 @@ function percentage()
     }
 
 /**
- * [[Calculate the factorial of the current input]]
- * @param {[[Function]]} num [[Numerical value]]
+ * Calculate the factorial of the current input
+ * @param {Function} num Numerical value
  */
 function factorial(num)
     {
@@ -193,7 +193,7 @@ function factorial(num)
     }
 
 /**
- * [[Calculate the square of the current input]]
+ * Calculate the square of the current input
  */
 function square()
     {
@@ -202,7 +202,7 @@ function square()
     }
 
 /**
- * [[Calculate the square root of the current input]]
+ * Calculate the square root of the current input
  */
 function squareRoot()
     {
@@ -211,7 +211,7 @@ function squareRoot()
     }
 
 /**
- * [[Calculate the inverse of the current input]]
+ * Calculate the inverse of the current input
  */
 function inverse()
     {
@@ -220,8 +220,8 @@ function inverse()
     }
 
 /**
- * [[It's to calculate the current input to the respective trig function]]
- * @param {[[Function]]} sign [[It's to repersent which trig function is being used]]
+ * It's to calculate the current input to the respective trig function
+ * @param {Function} sign It's to repersent which trig function is being used
  */
 function trig(sign)
     {
@@ -245,8 +245,8 @@ function trig(sign)
     }
 
 /**
- * [[It's a toggle switch where it switches the mathmatics from Radians to Degree]]
- * @param {[[Object]]} button [[It switches to Degree from Radians]]
+ * It's a toggle switch where it switches the mathmatics from Radians to Degree
+ * @param {Object} button It switches to Degree from Radians
  */
 function toggle(button)
     {
