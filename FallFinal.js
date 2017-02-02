@@ -11,7 +11,7 @@ var memory = "0";
 var operator = 0;
 
 /**
- * [Helper function for displaying the current input]
+ * Helper function for displaying the current input
  * @returns {string} It doesn't let the user to go beyond 12 characters
  */
 function inputLimit()
