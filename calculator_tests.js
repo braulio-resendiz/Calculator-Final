@@ -20,3 +20,14 @@ QUnit.test( "Square Root test", function( assert ) {
     assert.equal(document.getElementById("screen").value, "7", "Passed - Expected 7");
     current_input = "0";
 });
+QUnit.test( "Square test", function( assert ) {
+    addDigit('7');
+    square(current_input);
+    assert.equal(document.getElementById("screen").value, "49", "Passed - Expected 49");
+    current_input = "0";
+});QUnit.test( "switch sign test", function( assert ) {
+    addDigit('7');
+    changeSign(current_input);
+    assert.equal(document.getElementById("screen").value, "-7", "Passed - Expected -7");
+    current_input = "0";
+});
