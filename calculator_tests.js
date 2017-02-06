@@ -103,3 +103,13 @@ QUnit.test( "Add factorial test", function( assert )
     assert.equal(document.getElementById("screen").value, "24", "Passed - Expected 24");
     current_input = "0";
     });
+
+// Test dividing by zeros error
+QUnit.test( "div 0 error test", function( assert )
+    {
+    addDigit('4');
+    storeOperator(op.indexOf("/"));
+    addDigit('0');
+    assert.equal(document.getElementById("screen").value, "Error", "Passed - Expected Error");
+    current_input = "0";
+    });
