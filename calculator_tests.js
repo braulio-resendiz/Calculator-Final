@@ -114,3 +114,12 @@ QUnit.test( "div 0 error test", function( assert )
     assert.equal(document.getElementById("screen").value, "ERROR", "Passed - Expected ERROR");
     current_input = "0";
     });
+QUnit.test( "carrot", function( assert )
+    {
+    addDigit('4');
+    storeOperator("^");
+    addDigit('2');
+    calculate();
+    assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
+    current_input = "0";
+    });
