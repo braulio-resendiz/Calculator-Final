@@ -108,8 +108,9 @@ QUnit.test( "Add factorial test", function( assert )
 QUnit.test( "div 0 error test", function( assert )
     {
     addDigit('4');
-    storeOperator(op.indexOf("/"));
+    storeOperator("/");
     addDigit('0');
-    assert.equal(document.getElementById("screen").value, "Error", "Passed - Expected Error");
+    calculate();
+    assert.equal(document.getElementById("screen").value, "ERROR", "Passed - Expected ERROR");
     current_input = "0";
     });
