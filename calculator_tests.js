@@ -102,8 +102,7 @@ QUnit.test( "Add factorial test", function( assert )
     factorial(current_input);
     assert.equal(document.getElementById("screen").value, "24", "Passed - Expected 24");
     current_input = "0";
-
-});
+    });
 
 // Test toggle switch
 QUnit.test( "Add toggle switch test", function( assert ) {
@@ -112,31 +111,29 @@ trig("Deg");
 
 });
 
-
-
 // test sin function radians
-QUnit.test( "rad sin test", function( assert ) {
+QUnit.test( "rad sin test", function( assert )
+    {
     current_input = "4";
     trig("sin");
     assert.equal(document.getElementById("screen").value, "-0.7568024953079282", "Passed - Expected -0.7568024953079282");
-
-});
+    });
 
 // test cos function radians
-QUnit.test( "rad cos test", function( assert ) {
+QUnit.test( "rad cos test", function( assert )
+   {
    current_input = "4";
    trig("cos");
    assert.equal(document.getElementById("screen").value, "-0.6536436208636119", "Passed - Expected -0.6536436208636119");
-
-});
+   });
 
 // test tan function radians
-QUnit.test( "rad tan test", function( assert ) {
+QUnit.test( "rad tan test", function( assert )
+   {
    current_input = "4";
    trig("tan");
    assert.equal(document.getElementById("screen").value, "1.1578212823495777", "Passed - Expected 1.1578212823495777");
-
-});
+   });
 
 // Test dividing by zeros error
 QUnit.test( "div 0 error test", function( assert )
@@ -146,5 +143,16 @@ QUnit.test( "div 0 error test", function( assert )
     addDigit('0');
     calculate();
     assert.equal(document.getElementById("screen").value, "ERROR", "Passed - Expected ERROR");
+    current_input = "0";
+    });
+
+// Test for exponents
+QUnit.test( "carrot", function( assert )
+    {
+    addDigit('4');
+    storeOperator("^");
+    addDigit('2');
+    calculate();
+    assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
     current_input = "0";
     });
