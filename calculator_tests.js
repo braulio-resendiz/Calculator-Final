@@ -106,8 +106,12 @@ QUnit.test( "Add factorial test", function( assert )
 
 // Test toggle switch
 QUnit.test( "Add toggle switch test", function( assert ) {
-trig("Deg");
-    assert.equal(document.getElementById("screen").value, "(Math.PI / 180) * current_input;", "Passed - Expected Deg");
+    toggle("Deg");
+    addDigit('9');
+    addDigit('0');
+    trig("sin");
+
+    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected Deg");
 
 });
 
@@ -156,3 +160,12 @@ QUnit.test( "carrot", function( assert )
     assert.equal(document.getElementById("screen").value, "16", "Passed - Expected 16");
     current_input = "0";
     });
+
+// test tan function radians
+QUnit.test("deg sin test", function( assert )
+   {
+    toggle("Deg")
+    current_input = "4";
+    trig("sin");
+   assert.equal(document.getElementById("screen").value, "0.06975647374", "Passed - Expected 0.06975647374");
+   });
