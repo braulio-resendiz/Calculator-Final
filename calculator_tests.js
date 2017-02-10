@@ -105,38 +105,33 @@ QUnit.test( "Add factorial test", function( assert )
     });
 
 // Test toggle switch
-<<<<<<< HEAD
-QUnit.test( "cos deg test", function( assert ) {
+QUnit.test( "cos deg test", function( assert )
+    {
     addDigit('4');
     trig("Deg");
     trig("cos");
     assert.equal(document.getElementById("screen").value, "0.99756405026", "Passed - Expected 0.99756405026");
-      current_input = "0";
-});
-QUnit.test( "cos tan test", function( assert ) {
+    current_input = "0";
+    });
+
+QUnit.test( "cos tan test", function( assert )
+    {
     trig("Deg");
     current_input = "4";
     trig("tan");
     assert.equal(document.getElementById("screen").value, "0.06992681194", "Passed - Expected 0.06992681194");
-      current_input = "0";
-});
-QUnit.test( "cos sin test", function( assert ) {
-    trig("Deg");
-    current_input = "4";
-    trig("sin");
-    assert.equal(document.getElementById("screen").value, "0.0697564737441253", "Passed - Expected 0.0697564737441253");
-      current_input = "0";
-=======
-QUnit.test( "Add toggle switch test", function( assert ) {
-    toggle("Deg");
-    addDigit('9');
-    addDigit('0');
-    trig("sin");
+    current_input = "0";
+    });
 
-    assert.equal(document.getElementById("screen").value, "1", "Passed - Expected Deg");
-
->>>>>>> origin/master
-});
+QUnit.test( "cos sin test", function( assert )
+   {
+   trig("Deg");
+   current_input = "4";
+   trig("sin");
+   assert.equal(document.getElementById("screen").value, "0.06975647374412
+   "Passed - Expected 0.0697564737441253");
+   current_input = "0";
+   });
 
 // test sin function radians
 QUnit.test( "rad sin test", function( assert )
@@ -187,8 +182,8 @@ QUnit.test( "carrot", function( assert )
 // test tan function radians
 QUnit.test("deg sin test", function( assert )
    {
-    toggle("Deg")
-    current_input = "4";
-    trig("sin");
+   toggle("Deg")
+   current_input = "4";
+   trig("sin");
    assert.equal(document.getElementById("screen").value, "0.06975647374", "Passed - Expected 0.06975647374");
    });
