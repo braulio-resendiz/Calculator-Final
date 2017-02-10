@@ -110,27 +110,27 @@ QUnit.test( "deg cos test", function( assert ) {
     addDigit('3');
     addDigit('0');
     trig("cos");
-    assert.equal(document.getElementById("screen").value, "0", "Passed - Expected 0");
+    assert.equal(document.getElementById("screen").value, "0.86603", "Passed - Expected 0");
     current_input = "0";
 });
 
 // test deg tan
 QUnit.test( "deg tan test", function( assert ) {
     toggle();
-    addDigit('9');
+    addDigit('3');
     addDigit('0');
     trig("tan");
-    assert.equal(document.getElementById("screen").value, "0.06992681194", "Passed - Expected 0.06992681194");
+    assert.equal(document.getElementById("screen").value, "0.57735", "Passed - Expected 0.57735");
       current_input = "0";
 });
 
 // test deg cos
 QUnit.test( "deg sin test", function( assert ) {
    toggle();
-    addDigit('9');
+    addDigit('3');
     addDigit('0');
     trig("sin");
-    assert.equal(document.getElementById("screen").value, "0.0697564737441253", "Passed - Expected 0.0697564737441253");
+    assert.equal(document.getElementById("screen").value, "0.5", "Passed - Expected 0.5");
       current_input = "0";
 });
 
@@ -140,7 +140,7 @@ QUnit.test( "rad sin test", function( assert )
     addDigit('9');
     addDigit('0')
     trig("sin");
-    assert.equal(document.getElementById("screen").value, "-0.7568024953079282", "Passed - Expected -0.7568024953079282");
+    assert.equal(document.getElementById("screen").value, "0.894", "Passed - Expected 0.894");
     current_input = "0";
     });
 
@@ -150,7 +150,7 @@ QUnit.test( "rad cos test", function( assert )
    addDigit('9');
     addDigit('0')
    trig("cos");
-   assert.equal(document.getElementById("screen").value, "-0.6536436208636119", "Passed - Expected -0.6536436208636119");
+   assert.equal(document.getElementById("screen").value, "-0.44807", "Passed - Expected -0.44807");
     current_input = "0";
    });
 
@@ -160,7 +160,7 @@ QUnit.test( "rad tan test", function( assert )
     addDigit('9');
     addDigit('0')
    trig("tan");
-   assert.equal(document.getElementById("screen").value, "1.1578212823495777", "Passed - Expected 1.1578212823495777");
+   assert.equal(document.getElementById("screen").value, "-1.9952", "Passed - Expected -1.9952");
     current_input = "0";
    });
 
