@@ -231,15 +231,15 @@ function trig(sign)
             }
         if (sign == "sin")
             {
-            current_input = Math.sin(current_input);
+            current_input = Math.round(Math.sin(current_input)*100000)/100000;
             }
         else if (sign == "cos")
             {
-            current_input = Math.cos(current_input);
+            current_input = Math.round(Math.cos(current_input)*100000)/100000;
             }
         else if (sign == "tan")
             {
-            current_input = Math.tan(current_input);
+            current_input = Math.round(Math.tan(current_input)*100000)/100000;
             }
     displayCurrentInput();
     }
@@ -250,14 +250,14 @@ function trig(sign)
  */
 function toggle(button)
     {
-        if (document.getElementById("1").value == "Rad")
+        if (document.getElementById("rad_deg_toggle").value == "Rad")
             {
-            document.getElementById("1").value = "Deg";
+            document.getElementById("rad_deg_toggle").value = "Deg";
             mode = "Deg"
             }
-        else if (document.getElementById("1").value == "Deg")
+        else if (document.getElementById("rad_deg_toggle").value == "Deg")
             {
-            document.getElementById("1").value = "Rad";
+            document.getElementById("rad_deg_toggle").value = "Rad";
             mode = "Rad"
             }
     }
