@@ -181,9 +181,9 @@ QUnit.test( "carrot", function( assert )
 
 // test tan function radians
 QUnit.test("deg sin test", function( assert )
-   {
-   toggle("Deg")
-   current_input = "4";
-   trig("sin");
-   assert.equal(document.getElementById("screen").value, "0.06975647374", "Passed - Expected 0.06975647374");
-   });
+    {
+    trig(current_input)
+    current_input = "4";
+    trig("sin");
+    assert.equal(document.getElementById("screen").value, "0.06975647374", "Passed -  Expected 0.06975647374");
+    });
