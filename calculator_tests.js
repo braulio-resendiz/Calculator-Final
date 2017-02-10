@@ -105,6 +105,28 @@ QUnit.test( "Add factorial test", function( assert )
     });
 
 // Test toggle switch
+<<<<<<< HEAD
+QUnit.test( "cos deg test", function( assert ) {
+    addDigit('4');
+    trig("Deg");
+    trig("cos");
+    assert.equal(document.getElementById("screen").value, "0.99756405026", "Passed - Expected 0.99756405026");
+      current_input = "0";
+});
+QUnit.test( "cos tan test", function( assert ) {
+    trig("Deg");
+    current_input = "4";
+    trig("tan");
+    assert.equal(document.getElementById("screen").value, "0.06992681194", "Passed - Expected 0.06992681194");
+      current_input = "0";
+});
+QUnit.test( "cos sin test", function( assert ) {
+    trig("Deg");
+    current_input = "4";
+    trig("sin");
+    assert.equal(document.getElementById("screen").value, "0.0697564737441253", "Passed - Expected 0.0697564737441253");
+      current_input = "0";
+=======
 QUnit.test( "Add toggle switch test", function( assert ) {
     toggle("Deg");
     addDigit('9');
@@ -113,6 +135,7 @@ QUnit.test( "Add toggle switch test", function( assert ) {
 
     assert.equal(document.getElementById("screen").value, "1", "Passed - Expected Deg");
 
+>>>>>>> origin/master
 });
 
 // test sin function radians
